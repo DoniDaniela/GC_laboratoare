@@ -1,0 +1,20 @@
+.block1
+{
+	width: 50%;
+	padding-top: 10vh;
+}
+div
+{
+
+	flex-direction: row;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+}
+.block2
+{
+	width: 50%;
+	padding-top: 10vh;
+	padding-left: 10vw;
+}

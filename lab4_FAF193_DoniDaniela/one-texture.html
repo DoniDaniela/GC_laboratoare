@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+		<title>One texture example!</title>
+		<link rel="stylesheet" type="text/css" href="lab4.css">
+		<script id="vertex-shader" type="x-shader/x-vertex">
+			attribute vec4 vPosition;
+			attribute vec2 vTextureCoord;
+
+			varying vec2 fTextureCoord; 
+
+			void
+			main() {
+			    gl_Position = vPosition;
+
+			    fTextureCoord = vTextureCoord; 
+			}
+		</script>
+
+		<script id="fragment-shader" type="x-shader/x-fragment">
+			precision mediump float;
+
+			uniform sampler2D textureData; 
+			varying vec2 fTextureCoord;
+			
+			void
+			main() {
+				vec4 colorFromTexture = texture2D(textureData, fTextureCoord); 
+			    gl_FragColor = colorFromTexture;
+			}
+		</script>
+		<script type="text/javascript" src="webgl-utils.js"></script>
+		<script type="text/javascript" src="initShaders.js"></script>
+		<script type="text/javascript" src="MV.js"></script>
+		<script type="text/javascript" src="one-texture.js"></script>
+	</head>
+
+	<body>
+		<canvas id="gl-canvas" width="512" height="512">
+		Oops ... your browser doesn't support the HTML5 canvas element
+		</canvas>
+		<div>
+			<label class="block1" >Load texture ---></label>
+			<input class ="block2" texture-number="0" type="file" id="file-loader" style="font-size: 24px;" />	
+		</div>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+button {
+    margin: 5px 10px;
+    width: 120px;
+    height: 30px;
+    border-radius: 5px;
+    color: black;
+    background: white;
+    border: 2px solid black;
+}
+
+body, .moves {
+    display: flex;
+    flex-direction: row;
+}
+
+canvas {
+    width: 500px;
+    height: 500px;
+}
+
+.functions {
+    margin-left: 10px;
+}
+
+.moves > div {
+    margin-right: 30px;
+}
